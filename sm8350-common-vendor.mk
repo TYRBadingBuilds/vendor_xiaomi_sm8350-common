@@ -181,6 +181,9 @@ PRODUCT_PACKAGES += \
     libOpenCL \
     libadreno_utils \
     libc2d30_bltlib \
+    libcapiv2svacnn \
+    libcapiv2svarnn \
+    libcapiv2vop \
     libcdsprpc \
     libconfigdb \
     libcvp2_1 \
@@ -258,9 +261,6 @@ PRODUCT_PACKAGES += \
     libOmxVideoDSMode \
     libbluetooth_audio_session_qti \
     libbluetooth_audio_session_qti_2_1 \
-    libcapiv2svacnn \
-    libcapiv2svarnn \
-    libcapiv2vop \
     libdsd2pcm \
     libgcs-calwrapper \
     libgcs-ipc \
