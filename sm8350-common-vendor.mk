@@ -6,6 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/sm8350-common
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/sm8350-common/proprietary/odm/etc/init/vendor.dolby.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.dolby.media.c2@1.0-service.rc \
+    vendor/xiaomi/sm8350-common/proprietary/odm/etc/init/vendor.dolby_sp.hardware.dmssp@2.0-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.dolby_sp.hardware.dmssp@2.0-service.rc \
     vendor/xiaomi/sm8350-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/xiaomi/sm8350-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/xiaomi/sm8350-common/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
@@ -129,7 +131,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/qcril_database/upgrade/other/8_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/other/8_version_update_ecc_table.sql \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/qcril_database/upgrade/other/9_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/other/9_version_update_ecc_table.sql \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
-    vendor/xiaomi/sm8350-common/proprietary/vendor/etc/seccomp_policy/atfwd@2.0.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/atfwd@2.0.policy \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.base-arm.policy \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext-arm.policy \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/seccomp_policy/imsrtp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/imsrtp.policy \
@@ -162,22 +163,8 @@ PRODUCT_PACKAGES += \
     libq3dtools_adreno \
     libq3dtools_esx \
     vulkan.adreno \
-    libAlacSwDec \
-    libApeSwDec \
     libC2D2 \
     libCB \
-    libMpeghSwEnc \
-    libOmxAacDec \
-    libOmxAlacDec \
-    libOmxAlacDecSw \
-    libOmxAmrwbplusDec \
-    libOmxApeDec \
-    libOmxApeDecSw \
-    libOmxEvrcDec \
-    libOmxG711Dec \
-    libOmxMpeghEncSw \
-    libOmxQcelp13Dec \
-    libOmxWmaDec \
     libOpenCL \
     libadreno_utils \
     libc2d30_bltlib \
@@ -253,15 +240,11 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.lahaina \
     vendor.qti.hardware.bluetooth_audio@2.1-impl \
     libFileMux_proprietary \
-    libOmxDsdDec \
-    libOmxMpeghDecSw \
-    libOmxVideoDSMode \
     libbluetooth_audio_session_qti \
     libbluetooth_audio_session_qti_2_1 \
     libcapiv2svacnn \
     libcapiv2svarnn \
     libcapiv2vop \
-    libdsd2pcm \
     libgcs-calwrapper \
     libgcs-ipc \
     libgcs-osal \
@@ -496,7 +479,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.radio.am@1.0 \
-    vendor.qti.hardware.radio.atcmdfwd@1.0 \
     vendor.qti.hardware.radio.ims@1.0 \
     vendor.qti.hardware.radio.ims@1.1 \
     vendor.qti.hardware.radio.ims@1.2 \
@@ -577,6 +559,19 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifidisplaysession@1.0 \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
+    libcodec2_hidl@1.0_sp \
+    libcodec2_hidl_plugin_sp \
+    libcodec2_soft_ac4dec_sp \
+    libcodec2_soft_common_sp \
+    libcodec2_soft_ddpdec_sp \
+    libcodec2_store_dolby_sp \
+    libcodec2_vndk_sp \
+    libdapparamstorage_sp \
+    libdeccfg_sp \
+    libdlbdsservice_sp \
+    libui_sp \
+    vendor.dolby_sp.hardware.dmssp@2.0-impl \
+    vendor.dolby_sp.hardware.dmssp@2.0 \
     CACertService \
     CneApp \
     IWlanService \
@@ -603,7 +598,7 @@ PRODUCT_PACKAGES += \
     manifest_vendor.xiaomi.hardware.mlipay.xml \
     vendor.qti.diag.hal.service.xml \
     vendor.qti.gnss@4.0-service.xml \
-    ATFWD-daemon \
+    vendor.dolby.hardware.dms.xml \
     adpl \
     adsprpcd \
     cdsprpcd \
@@ -664,7 +659,9 @@ PRODUCT_PACKAGES += \
     wifidisplayhalservice \
     xtra-daemon \
     dpmd \
-    wfdservice64
+    wfdservice64 \
+    vendor.dolby_sp.hardware.dmssp@2.0-service \
+    vendor.dolby_sp.media.c2@1.0-service
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
